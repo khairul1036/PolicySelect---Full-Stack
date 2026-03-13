@@ -93,7 +93,7 @@ const Footer = () => {
                 <div className="flex flex-col space-y-2">
                     {/* Replace with your actual white logo */}
                     <img
-                        src="/public/logo2.jpeg"
+                        src="/logo2.jpeg"
                         alt="PolicySelect Logo"
                         width={140}
                         height={28}

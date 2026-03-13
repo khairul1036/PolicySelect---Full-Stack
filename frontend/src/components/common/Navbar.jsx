@@ -20,7 +20,7 @@ const Navbar = () => {
                 {/* Right side - Log In button */}
                 <div className="flex items-center">
                     <a
-                        href="/login"
+                        href="/sign-in"
                         className={`
               group flex items-center justify-center gap-2 
               rounded-full border-2 border-[#8F49AA] 

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Helmet from '../../components/helmet/Helmet';
+import manOnPhone from '../../assets/image/man_phone.webp';
 
 const Home = () => {
     const [zipCode, setZipCode] = useState('');
@@ -10,6 +12,12 @@ const Home = () => {
 
     return (
         <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
+            {/* SEO Meta Tags */}
+            <Helmet
+                title="PolicySelect | Compare Medicare Advantage Plans in Your Area"
+                description="Easily compare 2026 Medicare Advantage plans available in your area. Enter your ZIP code to view and choose the best plan for your healthcare needs."
+            />
+
             <div className="mx-auto max-w-3xl">
                 {/* Main card */}
                 <div className="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
@@ -17,7 +25,7 @@ const Home = () => {
                         {/* Hero image - always on top */}
                         <div className="w-full">
                             <img
-                                src="src/assets/image/man_phone.webp"           // ← your image path
+                                src={manOnPhone}
                                 alt="Person checking Medicare plans on phone"
                                 className="w-full h-56 sm:h-64 md:h-72 lg:h-80 object-cover object-top"
                             />
@@ -96,6 +104,7 @@ const Home = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 
