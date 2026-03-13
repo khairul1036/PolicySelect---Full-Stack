@@ -3,6 +3,9 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/home/Home";
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
+import PasswordReset from "../pages/auth/PasswordReset";
+import Plans from "../pages/plans/Plans";
+import Compare from "../pages/plans/Compare";
 
 const router = createBrowserRouter([
     {
@@ -20,7 +23,19 @@ const router = createBrowserRouter([
             {
                 path: "/sign-up",
                 element: <Register />
-            }
+            },
+            {
+                path: "/password-reset",
+                element: <PasswordReset />
+            },
+            {
+                path: "/plans",
+                element: <Plans />
+            },
+            {
+                path: "/plans/compare",
+                element: <Compare />
+            },
         ]
     },
 ]);

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Helmet from '../../components/helmet/Helmet';
 import manOnPhone from '../../assets/image/man_phone.webp';
+import { Link } from 'react-router';
 
 const Home = () => {
     const [zipCode, setZipCode] = useState('');
@@ -75,17 +76,19 @@ const Home = () => {
 
                             {/* Buttons - always stacked vertically */}
                             <div className="flex flex-col gap-4 mx-auto md:mx-0">
-                                <button
-                                    type="button"
-                                    className={`
+                                <Link to={'/plans'}>
+                                    <button
+                                        type="button"
+                                        className={`
                     w-full py-4.5 px-6 rounded-lg font-semibold text-lg
                     bg-[#8F49AA] text-white 
                     hover:bg-[#7a3e8f] active:bg-[#6a357d]
                     transition-colors duration-200 shadow-sm hover:shadow
                   `}
-                                >
-                                    View All Available Plans
-                                </button>
+                                    >
+                                        View All Available Plans
+                                    </button>
+                                </Link>
 
                                 <button
                                     type="button"
