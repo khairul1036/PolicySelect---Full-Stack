@@ -6,6 +6,7 @@ import Register from "../pages/auth/Register";
 import PasswordReset from "../pages/auth/PasswordReset";
 import Plans from "../pages/plans/Plans";
 import Compare from "../pages/plans/Compare";
+import PlanDetails from "../pages/plans/plan-details";
 
 const router = createBrowserRouter([
     {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
             {
                 path: "/plans",
                 element: <Plans />
+            },
+            {
+                path: "/plans/:planId",
+                element: <PlanDetails />
             },
             {
                 path: "/plans/compare",
