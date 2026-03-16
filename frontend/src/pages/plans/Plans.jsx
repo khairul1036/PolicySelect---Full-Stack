@@ -90,7 +90,7 @@ const Plans = () => {
                     {/* Filters / Sort / Plan Type pills */}
                     <div className="flex flex-wrap gap-3">
                         <button 
-                            onClick={() => setIsSortModalOpen(true)}
+                           
                             className="flex items-center gap-2 px-5 py-2.5 border border-gray-300 rounded-full hover:bg-gray-100 transition-colors text-sm font-medium">
                             <span>Filters</span>
                             <FiFilter size={18} />

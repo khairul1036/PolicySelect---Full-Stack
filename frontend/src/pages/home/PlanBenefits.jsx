@@ -187,7 +187,7 @@ const PlanBenefits = ({ onSubmit }) => {
           <div className="mt-8 md:mt-12 flex justify-center">
             <button
               onClick={handleSubmit}
-              className="w-full md:w-full px-8 md:px-12 py-3 md:py-4 bg-[#0077d4] hover:bg-[#005fa3] text-white font-bold rounded-md transition-colors duration-200"
+              className="w-full md:w-full px-8 md:px-12 py-3 md:py-4 bg-[#8F49AA] hover:bg-[#7a3e8f] text-white font-bold rounded-md transition-colors duration-200"
             >
               See Plan Results
             </button>

@@ -79,8 +79,8 @@ const EnrollmentForm = ({ planName = "UHC Dual Complete NY-S002", onSubmit }) =>
       <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-sm p-8">
         {/* Header Icon */}
         <div className="flex justify-center mb-6">
-          <div className="bg-blue-100 p-3 rounded-lg">
-            <User className="w-8 h-8 text-blue-600" />
+          <div className="bg-[#8F49AA]/10 p-3 rounded-lg">
+            <User className="w-8 h-8 text-[#8F49AA]" />
           </div>
         </div>
 
@@ -91,7 +91,7 @@ const EnrollmentForm = ({ planName = "UHC Dual Complete NY-S002", onSubmit }) =>
         <p className="text-gray-600 text-center mb-2">
           GoHealth will use the information provided below to verify your identity when speaking with our licensed insurance agents by phone.
         </p>
-        <p className="text-sm text-blue-600 text-center mb-8 font-medium">
+        <p className="text-sm text-[#8F49AA] text-center mb-8 font-medium">
           Plan: {displayPlanName}
         </p>
 
@@ -111,7 +111,7 @@ const EnrollmentForm = ({ planName = "UHC Dual Complete NY-S002", onSubmit }) =>
               className={`w-full px-4 py-2 border-2 rounded-md focus:outline-none transition ${
                 errors.firstName
                   ? 'border-red-500 bg-red-50'
-                  : 'border-gray-300 focus:border-blue-500'
+                  : 'border-gray-300 focus:border-[#8F49AA]'
               }`}
             />
             {errors.firstName && (
@@ -133,7 +133,7 @@ const EnrollmentForm = ({ planName = "UHC Dual Complete NY-S002", onSubmit }) =>
               className={`w-full px-4 py-2 border-2 rounded-md focus:outline-none transition ${
                 errors.lastName
                   ? 'border-red-500 bg-red-50'
-                  : 'border-gray-300 focus:border-blue-500'
+                  : 'border-gray-300 focus:border-[#8F49AA]'
               }`}
             />
             {errors.lastName && (
@@ -152,7 +152,7 @@ const EnrollmentForm = ({ planName = "UHC Dual Complete NY-S002", onSubmit }) =>
               value={formData.email}
               onChange={handleChange}
               placeholder="user@domain.com"
-              className="w-full px-4 py-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition"
+              className="w-full px-4 py-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-[#8F49AA] transition"
             />
           </div>
 
@@ -170,7 +170,7 @@ const EnrollmentForm = ({ planName = "UHC Dual Complete NY-S002", onSubmit }) =>
               className={`w-full px-4 py-2 border-2 rounded-md focus:outline-none transition ${
                 errors.phone
                   ? 'border-red-500 bg-red-50'
-                  : 'border-gray-300 focus:border-blue-500'
+                  : 'border-gray-300 focus:border-[#8F49AA]'
               }`}
             />
             {errors.phone && (
@@ -189,7 +189,7 @@ const EnrollmentForm = ({ planName = "UHC Dual Complete NY-S002", onSubmit }) =>
               value={formData.dateOfBirth}
               onChange={handleChange}
               placeholder="mm/dd/yyyy"
-              className="w-full px-4 py-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition"
+              className="w-full px-4 py-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-[#8F49AA] transition"
             />
           </div>
 
@@ -204,7 +204,7 @@ const EnrollmentForm = ({ planName = "UHC Dual Complete NY-S002", onSubmit }) =>
               value={formData.zipCode}
               onChange={handleChange}
               placeholder="12121"
-              className="w-full px-4 py-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition"
+              className="w-full px-4 py-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-[#8F49AA] transition"
             />
           </div>
 
@@ -240,7 +240,7 @@ const EnrollmentForm = ({ planName = "UHC Dual Complete NY-S002", onSubmit }) =>
                 </p>
                 <p>
                   GoHealth does not charge for sending or receiving text messages. Your carrier's message and data rates may apply. By using this form, you agree to the terms of our{' '}
-                  <a href="#" className="text-blue-600 hover:underline">
+                  <a href="#" className="text-[#8F49AA] hover:underline">
                     Privacy Policy
                   </a>
                   .
@@ -253,7 +253,7 @@ const EnrollmentForm = ({ planName = "UHC Dual Complete NY-S002", onSubmit }) =>
           <button
             type="submit"
             disabled={submitted}
-            className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-green-600 text-white font-semibold py-3 px-4 rounded-md transition duration-200 mt-8"
+            className="w-full bg-[#8F49AA] hover:bg-[#7a3e8f] disabled:bg-green-600 text-white font-semibold py-3 px-4 rounded-md transition duration-200 mt-8"
           >
             {submitted ? 'Form Submitted Successfully!' : 'Submit And Call'}
           </button>

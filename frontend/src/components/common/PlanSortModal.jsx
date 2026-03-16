@@ -60,7 +60,7 @@ const PlanSortModal = ({ isOpen, onClose, onSubmit }) => {
               key={option.id}
               className={`flex items-start p-4 border-2 rounded-lg cursor-pointer transition-all ${
                 selectedSort === option.id
-                  ? 'border-blue-600 bg-blue-50'
+                  ? 'border-[#8F49AA] bg-[#8F49AA]/10'
                   : 'border-gray-200 bg-white hover:bg-gray-50'
               }`}
             >
@@ -72,7 +72,7 @@ const PlanSortModal = ({ isOpen, onClose, onSubmit }) => {
                   value={option.id}
                   checked={selectedSort === option.id}
                   onChange={(e) => setSelectedSort(e.target.value)}
-                  className="w-5 h-5 cursor-pointer accent-blue-600"
+                  className="w-5 h-5 cursor-pointer accent-[#8F49AA]"
                 />
               </div>
 
@@ -93,7 +93,7 @@ const PlanSortModal = ({ isOpen, onClose, onSubmit }) => {
         <div className="p-6 border-t border-gray-200">
           <button
             onClick={handleSubmit}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-200"
+            className="w-full bg-[#8F49AA] hover:bg-[#7a3e8f] text-white font-bold py-3 px-4 rounded-lg transition-colors duration-200"
           >
             Show Plans
           </button>
