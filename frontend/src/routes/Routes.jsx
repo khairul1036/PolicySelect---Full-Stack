@@ -7,6 +7,7 @@ import PasswordReset from "../pages/auth/PasswordReset";
 import Plans from "../pages/plans/Plans";
 import Compare from "../pages/plans/Compare";
 import PlanDetails from "../pages/plans/plan-details";
+import EnrollmentForm from "../pages/plans/EnrollmentForm";
 
 const router = createBrowserRouter([
     {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
             {
                 path: "/plans/compare",
                 element: <Compare />
+            },
+            {
+                path: "/enroll",
+                element: <EnrollmentForm />
             },
         ]
     },

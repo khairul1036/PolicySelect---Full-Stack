@@ -59,7 +59,9 @@ const Plans = () => {
             <div className="sticky top-20 z-50 bg-white shadow-md border-b border-gray-200">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-3">
                     {/* Call to Enroll button */}
-                    <button className="bg-[#F28C38] hover:bg-[#e07b2f] text-white font-bold px-6 py-3 rounded-full transition-colors whitespace-nowrap">
+                    <button 
+                        onClick={() => navigate('/enroll')}
+                        className="bg-[#F28C38] hover:bg-[#e07b2f] text-white font-bold px-6 py-3 rounded-full transition-colors whitespace-nowrap">
                         Call to Enroll
                     </button>
 

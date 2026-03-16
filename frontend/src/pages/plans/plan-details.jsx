@@ -60,8 +60,7 @@ export default function PlanDetails() {
   };
 
   const handleEnroll = () => {
-    // Implement enrollment logic or call
-    alert("Call to Enroll functionality coming soon!");
+    navigate('/enroll', { state: { planName: data.name } });
   };
 
   return (
