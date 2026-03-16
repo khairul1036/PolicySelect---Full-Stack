@@ -12,12 +12,14 @@ import {
 import { plans } from '../../data/plans';
 import ZipCodeModal from '../../components/common/ZipCodeModal';
 import PlanTypeFilter from '../../components/common/PlanTypeFilter';
+import PlanSortModal from '../../components/common/PlanSortModal';
 
 const Plans = () => {
     const navigate = useNavigate();
     const [zipCode, setZipCode] = useState('21157');
     const [isZipModalOpen, setIsZipModalOpen] = useState(false);
     const [isPlanTypeModalOpen, setIsPlanTypeModalOpen] = useState(false);
+    const [isSortModalOpen, setIsSortModalOpen] = useState(false);
     const [selectedPlans, setSelectedPlans] = useState([]);
 
     const toggleCompare = (planId) => {
@@ -40,6 +42,11 @@ const Plans = () => {
     const handlePlanTypeFilter = (planType) => {
         console.log('Selected plan type:', planType);
         // Add your plan type filtering logic here
+    };
+
+    const handleSortChange = (sortType) => {
+        console.log('Selected sort:', sortType);
+        // Add your sort logic here
     };
 
     const clearCompare = () => {
@@ -82,12 +89,16 @@ const Plans = () => {
 
                     {/* Filters / Sort / Plan Type pills */}
                     <div className="flex flex-wrap gap-3">
-                        <button className="flex items-center gap-2 px-5 py-2.5 border border-gray-300 rounded-full hover:bg-gray-100 transition-colors text-sm font-medium">
+                        <button 
+                            onClick={() => setIsSortModalOpen(true)}
+                            className="flex items-center gap-2 px-5 py-2.5 border border-gray-300 rounded-full hover:bg-gray-100 transition-colors text-sm font-medium">
                             <span>Filters</span>
                             <FiFilter size={18} />
                         </button>
 
-                        <button className="flex items-center gap-2 px-5 py-2.5 border border-gray-300 rounded-full hover:bg-gray-100 transition-colors text-sm font-medium">
+                        <button 
+                            onClick={() => setIsSortModalOpen(true)}
+                            className="flex items-center gap-2 px-5 py-2.5 border border-gray-300 rounded-full hover:bg-gray-100 transition-colors text-sm font-medium">
                             <span className="hidden md:inline">Sort by Recommended Matches</span>
                             <span className="md:hidden">Sort</span>
                             <FiChevronDown size={18} />
@@ -322,6 +333,14 @@ const Plans = () => {
             )}
 
 
+            {/* Plan Sort Modal */}
+            <PlanSortModal 
+                isOpen={isSortModalOpen}
+                onClose={() => setIsSortModalOpen(false)}
+                onSubmit={handleSortChange}
+            />
+            
+            
             {/* Plan Type Filter Modal */}
             <PlanTypeFilter 
                 isOpen={isPlanTypeModalOpen}
