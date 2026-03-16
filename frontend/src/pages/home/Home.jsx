@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Helmet from '../../components/helmet/Helmet';
 import manOnPhone from '../../assets/image/man_phone.webp';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     const [zipCode, setZipCode] = useState('');
@@ -90,17 +90,19 @@ const Home = () => {
                                     </button>
                                 </Link>
 
-                                <button
-                                    type="button"
-                                    className={`
+                                <Link to="/plan-benefits">
+                                    <button
+                                        type="button"
+                                        className={`
                     w-full py-4.5 px-6 rounded-lg font-semibold text-lg
                     border-2 border-[#8F49AA] text-[#8F49AA]
                     hover:bg-[#8F49AA]/10 active:bg-[#8F49AA]/20
                     transition-colors duration-200
                   `}
-                                >
-                                    Help Me Choose a Plan
-                                </button>
+                                    >
+                                        Help Me Choose a Plan
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>

@@ -8,6 +8,7 @@ import Plans from "../pages/plans/Plans";
 import Compare from "../pages/plans/Compare";
 import PlanDetails from "../pages/plans/plan-details";
 import EnrollmentForm from "../pages/plans/EnrollmentForm";
+import PlanBenefits from "../pages/home/PlanBenefits";
 
 const router = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <Home />
+            },
+            {
+                path: "/plan-benefits",
+                element: <PlanBenefits />
             },
             {
                 path: "/sign-in",
