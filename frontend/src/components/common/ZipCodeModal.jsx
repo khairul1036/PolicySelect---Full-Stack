@@ -40,7 +40,7 @@ const ZipCodeModal = ({ isOpen, currentZip, onApply, onCancel }) => {
             placeholder="e.g. 12121"
             maxLength={5}
             inputMode="numeric"
-            className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 text-lg"
+            className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#8F49AA] text-lg"
           />
         </div>
 
@@ -55,7 +55,7 @@ const ZipCodeModal = ({ isOpen, currentZip, onApply, onCancel }) => {
           <button
             onClick={handleApply}
             disabled={!zipCode.trim()}
-            className="flex-1 bg-blue-500 hover:bg-blue-600 disabled:bg-gray-300 text-white font-semibold py-3 px-4 rounded-lg transition-colors"
+            className="flex-1 bg-[#8F49AA] hover:bg-[#7a3e8f] disabled:bg-gray-300 text-white font-semibold py-3 px-4 rounded-lg transition-colors"
           >
             Apply
           </button>

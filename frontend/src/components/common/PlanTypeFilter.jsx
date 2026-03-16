@@ -37,8 +37,8 @@ const PlanTypeFilter = ({ isOpen, onClose, onSubmit }) => {
             {/* Medicare Advantage Plans */}
             <label className="flex items-start p-4 border-2 rounded-lg cursor-pointer transition-all"
               style={{
-                borderColor: selectedPlanType === 'medicare' ? '#0077d4' : '#e5e7eb',
-                backgroundColor: selectedPlanType === 'medicare' ? '#f0f7ff' : '#ffffff',
+                borderColor: selectedPlanType === 'medicare' ? '#8F49AA' : '#e5e7eb',
+                backgroundColor: selectedPlanType === 'medicare' ? 'rgba(143, 73, 170, 0.1)' : '#ffffff',
               }}
             >
               <input
@@ -63,8 +63,8 @@ const PlanTypeFilter = ({ isOpen, onClose, onSubmit }) => {
             {/* Prescription Drugs Plans */}
             <label className="flex items-start p-4 border-2 rounded-lg cursor-pointer transition-all"
               style={{
-                borderColor: selectedPlanType === 'partd' ? '#0077d4' : '#e5e7eb',
-                backgroundColor: selectedPlanType === 'partd' ? '#f0f7ff' : '#ffffff',
+                borderColor: selectedPlanType === 'partd' ? '#8F49AA' : '#e5e7eb',
+                backgroundColor: selectedPlanType === 'partd' ? 'rgba(143, 73, 170, 0.1)' : '#ffffff',
               }}
             >
               <input
@@ -91,7 +91,7 @@ const PlanTypeFilter = ({ isOpen, onClose, onSubmit }) => {
         <div className="px-6 py-4 border-t border-gray-200">
           <button
             onClick={handleSubmit}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-200"
+            className="w-full bg-[#8F49AA] hover:bg-[#7a3e8f] text-white font-bold py-3 px-4 rounded-lg transition-colors duration-200"
           >
             Show Plans
           </button>
