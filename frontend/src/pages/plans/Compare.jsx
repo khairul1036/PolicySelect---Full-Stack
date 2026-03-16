@@ -9,33 +9,7 @@ import {
   FiUser,
   FiXCircle,
 } from 'react-icons/fi';
-
-const fallbackPlans = [
-  {
-    id: 'H7464_008_2',
-    name: 'UHC Dual Complete MD-S002 (HMO D-SNP)',
-    planId: 'H7464-008-2',
-    year: '2026',
-    zip: '21157',
-    logo: 'https://3dapi.nbsk.top/uploads/2026-03-13_08-35-12_2.7942.png',
-  },
-  {
-    id: 'H7464_012_0',
-    name: 'UHC Dual Complete MD-Q001 (HMO-POS D-SNP)',
-    planId: 'H7464-012',
-    year: '2026',
-    zip: '21157',
-    logo: 'https://3dapi.nbsk.top/uploads/2026-03-13_08-35-12_2.7942.png',
-  },
-  {
-    id: 'H2172_019_0',
-    name: 'Kaiser Permanente Dual Essential Plan 2 MD (HMO D-SNP)',
-    planId: 'H2172-019',
-    year: '2026',
-    zip: '21157',
-    logo: 'https://3dapi.nbsk.top/uploads/2026-03-13_08-35-12_2.7942.png',
-  },
-];
+import { plans as allPlans } from '../../data/plans';
 
 const costRows = [
   { label: 'Monthly Premium', values: ['$0', '$0', '$0'] },
@@ -68,8 +42,8 @@ const Compare = () => {
 
   const selectedIds = [planId1, planId2, planId3].filter(Boolean);
   const plans = selectedIds.length
-    ? fallbackPlans.filter((plan) => selectedIds.includes(plan.id))
-    : fallbackPlans;
+    ? allPlans.filter((plan) => selectedIds.includes(plan.id))
+    : allPlans.slice(0, 3);
 
   const filledPlans = [...plans];
   while (filledPlans.length < 3) {

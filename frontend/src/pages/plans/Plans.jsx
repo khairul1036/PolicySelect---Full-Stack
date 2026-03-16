@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import {
     FiCheck,
     FiCheckCircle,
@@ -9,47 +9,11 @@ import {
     FiStar,
     FiXCircle,
 } from 'react-icons/fi';
+import { plans } from '../../data/plans';
 
 const Plans = () => {
     const navigate = useNavigate();
     const [selectedPlans, setSelectedPlans] = useState([]);
-    // You can later fetch this data from API / state
-    const plans = [
-        {
-            id: 'H7464_012_0',
-            type: 'Medicare Advantage',
-            name: 'UHC Dual Complete MD-Q001 (HMO-POS D-SNP)',
-            planId: 'H7464-012',
-            premium: '$0',
-            rating: 3.5,
-            benefits: ['Rx Drugs', 'Dental', 'Vision', 'Hearing', 'OTC', 'Transportation'],
-            missingBenefits: [],
-            carrierLogo: 'https://3dapi.nbsk.top/uploads/2026-03-13_08-35-12_2.7942.png', // replace with real path
-        },
-        {
-            id: 'H7464_008_2',
-            type: 'Medicare Advantage',
-            name: 'UHC Dual Complete MD-S002 (HMO D-SNP)',
-            planId: 'H7464-008-2',
-            premium: '$0',
-            rating: 3.5,
-            benefits: ['Rx Drugs', 'Vision', 'Hearing', 'OTC', 'Transportation'],
-            missingBenefits: ['Dental'],
-            carrierLogo: 'https://3dapi.nbsk.top/uploads/2026-03-13_08-35-12_2.7942.png', // replace with real path
-        },
-        {
-            id: 'H2172_017_0',
-            type: 'Medicare Advantage',
-            name: 'Kaiser Permanente Dual Complete Plan 2 MD (HMO D-SNP)',
-            planId: 'H2172-017',
-            premium: '$0',
-            rating: 4.5,
-            benefits: ['Rx Drugs', 'Dental', 'Vision', 'Hearing', 'OTC', 'Transportation'],
-            missingBenefits: [],
-            carrierLogo: 'https://3dapi.nbsk.top/uploads/2026-03-13_08-35-12_2.7942.png', // replace with real path
-        },
-        // Add more plans similarly...
-    ];
 
     const toggleCompare = (planId) => {
         setSelectedPlans((prev) => {
@@ -95,7 +59,9 @@ const Plans = () => {
             <div className="sticky top-20 z-50 bg-white shadow-md border-b border-gray-200">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-3">
                     {/* Call to Enroll button */}
-                    <button className="bg-[#F28C38] hover:bg-[#e07b2f] text-white font-bold px-6 py-3 rounded-full transition-colors whitespace-nowrap">
+                    <button 
+                        onClick={() => navigate('/enroll')}
+                        className="bg-[#F28C38] hover:bg-[#e07b2f] text-white font-bold px-6 py-3 rounded-full transition-colors whitespace-nowrap">
                         Call to Enroll
                     </button>
 
@@ -164,7 +130,7 @@ const Plans = () => {
 
                 {/* Plan count + ZIP pill */}
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
-                    <p className="text-lg font-medium text-gray-900">2026 Plans (8)</p>
+                    <p className="text-lg font-medium text-gray-900">2026 Plans ({plans.length})</p>
 
                     <button className="flex items-center gap-2 px-5 py-2.5 border border-gray-300 rounded-full hover:bg-gray-100 transition-colors text-sm">
                         <span>ZIP: 21157</span>
@@ -232,19 +198,16 @@ const Plans = () => {
                                     <div className='flex flex-col md:flex-row md:items-center gap-6'>
                                         {/* Benefits */}
                                         <div>
-                                            <p className="text-2xl md:text-xl font-bold text-[#442364] pb-2">Monthly Premium</p>
+                                            <p className="text-2xl md:text-xl font-bold text-[#442364] pb-2">Benefits Coverage</p>
                                             <div className="flex flex-wrap gap-4">
-                                                {plan.benefits.map((benefit) => (
-                                                    <div key={benefit} className="flex items-center gap-1.5">
-                                                        <FiCheckCircle className="text-[#8F49AA]" size={18} />
-                                                        <span className="text-sm">{benefit}</span>
-                                                    </div>
-                                                ))}
-
-                                                {plan.missingBenefits.map((benefit) => (
-                                                    <div key={benefit} className="flex items-center gap-1.5 opacity-60">
-                                                        <FiXCircle className="text-red-500" size={18} />
-                                                        <span className="text-sm line-through">{benefit}</span>
+                                                {plan.benefits.slice(0, 6).map((benefit) => (
+                                                    <div key={benefit.name} className="flex items-center gap-1.5">
+                                                        {benefit.covered ? (
+                                                            <FiCheckCircle className="text-[#8F49AA]" size={18} />
+                                                        ) : (
+                                                            <FiXCircle className="text-red-500" size={18} />
+                                                        )}
+                                                        <span className={`text-sm ${!benefit.covered ? 'line-through opacity-60' : ''}`}>{benefit.name}</span>
                                                     </div>
                                                 ))}
                                             </div>
@@ -287,12 +250,12 @@ const Plans = () => {
 
                                     {/* Action buttons */}
                                     <div className="flex flex-col sm:flex-row gap-4 pt-4 border-t">
-                                        <a
-                                            href="#"
+                                        <Link
+                                            to={`/plans/${plan.id}`}
                                             className="flex-1 bg-[#8F49AA]/20 hover:bg-[#7a3e8f]/40 text-[#442364] font-bold py-4 px-6 rounded-lg text-center transition-colors"
                                         >
                                             View Plan Details
-                                        </a>
+                                        </Link>
 
                                         <button
                                             type="button"
