@@ -11,11 +11,13 @@ import {
 } from 'react-icons/fi';
 import { plans } from '../../data/plans';
 import ZipCodeModal from '../../components/common/ZipCodeModal';
+import PlanTypeFilter from '../../components/common/PlanTypeFilter';
 
 const Plans = () => {
     const navigate = useNavigate();
     const [zipCode, setZipCode] = useState('21157');
     const [isZipModalOpen, setIsZipModalOpen] = useState(false);
+    const [isPlanTypeModalOpen, setIsPlanTypeModalOpen] = useState(false);
     const [selectedPlans, setSelectedPlans] = useState([]);
 
     const toggleCompare = (planId) => {
@@ -33,6 +35,11 @@ const Plans = () => {
     const handleZipApply = (newZip) => {
         setZipCode(newZip);
         setIsZipModalOpen(false);
+    };
+
+    const handlePlanTypeFilter = (planType) => {
+        console.log('Selected plan type:', planType);
+        // Add your plan type filtering logic here
     };
 
     const clearCompare = () => {
@@ -86,7 +93,9 @@ const Plans = () => {
                             <FiChevronDown size={18} />
                         </button>
 
-                        <button className="flex items-center gap-2 px-5 py-2.5 border border-gray-300 rounded-full hover:bg-gray-100 transition-colors text-sm font-medium">
+                        <button 
+                            onClick={() => setIsPlanTypeModalOpen(true)}
+                            className="flex items-center gap-2 px-5 py-2.5 border border-gray-300 rounded-full hover:bg-gray-100 transition-colors text-sm font-medium">
                             <span>Medicare Advantage Plans</span>
                             <FiChevronDown size={18} />
                         </button>
@@ -312,6 +321,13 @@ const Plans = () => {
                 </div>
             )}
 
+
+            {/* Plan Type Filter Modal */}
+            <PlanTypeFilter 
+                isOpen={isPlanTypeModalOpen}
+                onClose={() => setIsPlanTypeModalOpen(false)}
+                onSubmit={handlePlanTypeFilter}
+            />
             {/* ZIP Code Modal */}
             <ZipCodeModal 
                 isOpen={isZipModalOpen}
