@@ -10,9 +10,12 @@ import {
     FiXCircle,
 } from 'react-icons/fi';
 import { plans } from '../../data/plans';
+import ZipCodeModal from '../../components/common/ZipCodeModal';
 
 const Plans = () => {
     const navigate = useNavigate();
+    const [zipCode, setZipCode] = useState('21157');
+    const [isZipModalOpen, setIsZipModalOpen] = useState(false);
     const [selectedPlans, setSelectedPlans] = useState([]);
 
     const toggleCompare = (planId) => {
@@ -25,6 +28,11 @@ const Plans = () => {
             }
             return [...prev, planId];
         });
+    };
+
+    const handleZipApply = (newZip) => {
+        setZipCode(newZip);
+        setIsZipModalOpen(false);
     };
 
     const clearCompare = () => {
@@ -132,8 +140,10 @@ const Plans = () => {
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
                     <p className="text-lg font-medium text-gray-900">2026 Plans ({plans.length})</p>
 
-                    <button className="flex items-center gap-2 px-5 py-2.5 border border-gray-300 rounded-full hover:bg-gray-100 transition-colors text-sm">
-                        <span>ZIP: 21157</span>
+                    <button 
+                        onClick={() => setIsZipModalOpen(true)}
+                        className="flex items-center gap-2 px-5 py-2.5 border border-gray-300 rounded-full hover:bg-gray-100 transition-colors text-sm">
+                        <span>ZIP: {zipCode}</span>
                         <FiChevronDown size={18} />
                     </button>
                 </div>
@@ -301,6 +311,14 @@ const Plans = () => {
                     </div>
                 </div>
             )}
+
+            {/* ZIP Code Modal */}
+            <ZipCodeModal 
+                isOpen={isZipModalOpen}
+                currentZip={zipCode}
+                onApply={handleZipApply}
+                onCancel={() => setIsZipModalOpen(false)}
+            />
         </div>
     );
 };
