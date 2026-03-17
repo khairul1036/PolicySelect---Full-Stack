@@ -65,7 +65,7 @@ const PlanSortModal = ({ isOpen, onClose, onSubmit }) => {
               }`}
             >
               {/* Radio Button */}
-              <div className="flex items-center mt-1 mr-4 flex-shrink-0">
+              <div className="flex items-center mt-1 mr-4 shrink-0">
                 <input
                   type="radio"
                   name="sort"
