@@ -99,8 +99,8 @@ const PlanBenefits = ({ onSubmit }) => {
 
   return (
     <main className="min-h-screen bg-white md:min-h-screen md:pb-14 md:pt-6 md:bg-gray-100">
-      <div className="relative mx-auto flex flex-col max-w-[710px]">
-        <div className="flex grow flex-col bg-white px-4 pt-4 pb-[42px] md:px-8 md:pt-8 md:pb-10 rounded-none md:rounded-2xl md:border md:border-gray-200">
+      <div className="relative mx-auto flex flex-col max-w-177.5">
+        <div className="flex grow flex-col bg-white px-4 pt-4 pb-10.5 md:px-8 md:pt-8 md:pb-10 rounded-none md:rounded-2xl md:border md:border-gray-200">
           {/* Image - Hidden on mobile */}
           <div className="hidden md:flex relative mb-5 min-h-56 justify-center overflow-hidden rounded-lg">
             <img
@@ -130,7 +130,7 @@ const PlanBenefits = ({ onSubmit }) => {
                   onClick={() => toggleBenefit(benefit.id)}
                   role="checkbox"
                   aria-checked={selectedBenefits[benefit.id]}
-                  className={`relative p-4 md:p-6 rounded-lg border-2 transition-all flex flex-col items-center justify-center text-center min-h-[100px] md:min-h-[120px] ${
+                  className={`relative p-4 md:p-6 rounded-lg border-2 transition-all flex flex-col items-center justify-center text-center min-h-25 md:min-h-30 ${
                     selectedBenefits[benefit.id]
                       ? benefit.type === 'primary'
                         ? 'bg-gray-100 border-gray-300'

@@ -13,6 +13,7 @@ import { plans } from '../../data/plans';
 import ZipCodeModal from '../../components/common/ZipCodeModal';
 import PlanTypeFilter from '../../components/common/PlanTypeFilter';
 import PlanSortModal from '../../components/common/PlanSortModal';
+import PlanFiltersModal from '../../components/common/PlanFiltersModal';
 
 const Plans = () => {
     const navigate = useNavigate();
@@ -20,6 +21,7 @@ const Plans = () => {
     const [isZipModalOpen, setIsZipModalOpen] = useState(false);
     const [isPlanTypeModalOpen, setIsPlanTypeModalOpen] = useState(false);
     const [isSortModalOpen, setIsSortModalOpen] = useState(false);
+    const [isFiltersModalOpen, setIsFiltersModalOpen] = useState(false);
     const [selectedPlans, setSelectedPlans] = useState([]);
 
     const toggleCompare = (planId) => {
@@ -47,6 +49,11 @@ const Plans = () => {
     const handleSortChange = (sortType) => {
         console.log('Selected sort:', sortType);
         // Add your sort logic here
+    };
+
+    const handleFiltersSubmit = (filters) => {
+        console.log('Selected filters:', filters);
+        // Add your filter logic here
     };
 
     const clearCompare = () => {
@@ -89,8 +96,8 @@ const Plans = () => {
 
                     {/* Filters / Sort / Plan Type pills */}
                     <div className="flex flex-wrap gap-3">
-                        <button 
-                           
+                        <button
+                            onClick={() => setIsFiltersModalOpen(true)}
                             className="flex items-center gap-2 px-5 py-2.5 border border-gray-300 rounded-full hover:bg-gray-100 transition-colors text-sm font-medium">
                             <span>Filters</span>
                             <FiFilter size={18} />
@@ -338,6 +345,13 @@ const Plans = () => {
                 isOpen={isSortModalOpen}
                 onClose={() => setIsSortModalOpen(false)}
                 onSubmit={handleSortChange}
+            />
+
+            {/* Plan Filters Modal */}
+            <PlanFiltersModal
+                isOpen={isFiltersModalOpen}
+                onClose={() => setIsFiltersModalOpen(false)}
+                onSubmit={handleFiltersSubmit}
             />
             
             
