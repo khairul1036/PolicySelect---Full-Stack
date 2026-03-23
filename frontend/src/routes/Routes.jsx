@@ -9,6 +9,12 @@ import Compare from "../pages/plans/Compare";
 import PlanDetails from "../pages/plans/plan-details";
 import EnrollmentForm from "../pages/plans/EnrollmentForm";
 import PlanBenefits from "../pages/home/PlanBenefits";
+import Profile from "../pages/profile/Profile";
+import PersonalInfo from "../pages/profile/components/PersonalInfo";
+import CurrentPlan from "../pages/profile/components/CurrentPlan";
+import Providers from "../pages/profile/components/Providers";
+import Prescriptions from "../pages/profile/components/Prescriptions";
+import BenefitPreferences from "../pages/profile/components/BenefitPreferences";
 
 const router = createBrowserRouter([
     {
@@ -51,6 +57,30 @@ const router = createBrowserRouter([
                 path: "/enroll",
                 element: <EnrollmentForm />
             },
+            {
+                path: "/profile",
+                element: <Profile />
+            },
+            {
+                path: "/profile/personal-info",
+                element: <PersonalInfo />
+            },
+            {
+                path: "/profile/current-plan",
+                element: <CurrentPlan />
+            },
+            {
+                path: "/profile/providers",
+                element: <Providers />
+            },
+            {
+                path: "/profile/prescriptions",
+                element: <Prescriptions />
+            },
+            {
+                path: "/profile/benefit-preferences",
+                element: <BenefitPreferences />
+            }
         ]
     },
 ]);
